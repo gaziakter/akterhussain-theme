@@ -9,51 +9,39 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Akter_Hussain
+ * @package Moni_Recipe
  */
 
 get_header();
 ?>
 
-<div class="content-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-				<main class="main-section">
-					<div class="row">
-						<?php
-						if ( have_posts() ) :
+<div id="primary" class="content-area">
+	<main id="main" class="page-main-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+					<?php
+					while ( have_posts() ) :
+						the_post();
 
-							/* Start the Loop */
-							while ( have_posts() ) :
-								the_post();
-								
-								// Template for page content
-								get_template_part( 'template-parts/content', 'page' );
+						get_template_part( 'template-parts/content', 'page' );
 
-								// If comments are open or we have at least one comment, load up the comment template.
-								if ( comments_open() || get_comments_number() ) :
-									comments_template();
-								endif;
-								
-							endwhile;
-
+			// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
 						endif;
-						?>
-					</div><!-- .row -->
-				</main><!-- .main-section -->
-			</div><!-- col-cl-8 -->
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-				<aside class="home-sidebar">
-					<?php 
-						// Template for Sidebar Popular post
-						get_template_part( 'template-parts/content', 'popular_post' );
-					?>
-				</aside><!-- .home-sidebar -->
-			</div><!-- col-cl-4 -->
-		</div><!-- .row -->
-	</div><!-- .container -->
-</div><!-- .content-section -->
+
+		endwhile; // End of the loop.
+		?>
+
+	</div>
+	<div class="col-12 col-sm-12 col-lg-4 col-xl-4">
+			<?php get_template_part( 'template-parts/content', 'monisidebar' ); ?>
+	</div>
+</div>
+</div>
+</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_footer();

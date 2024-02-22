@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Akter_Hussain
+ * @package Moni_Recipe
  */
 
 ?>
@@ -15,55 +15,99 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+<meta name="google-site-verification" content="pyZQ0HYVitEeB_Ki6ZhsbuQy6_L2RnZ5rcOMqih_OJQ" />	
+	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150975605-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150975605-1');
+</script>
+
 </head>
 
 <body <?php body_class(); ?>>
-	<?php wp_body_open(); ?>
 
-	<header class="header-section">
+	<header class="forallpage header-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-6 col-xl-4">
-					<div class="site-branding">
+				<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+					<div class="logo-area">
 						<?php the_custom_logo(); ?>
-					</div><!-- .site-branding -->
-				</div><!-- .col-xl-4 -->
-				<div class="col-6 col-xl-8">
-					<div class="primary-menu">
-						<nav class="akter-navigation">
-							<?php
-							wp_nav_menu( array(
-								'theme_location' => 'primary_menu'
-							) );
-							?>
-						</nav><!-- .akter-navigation -->
-					</div><!-- rimary-menu -->
-					<div class="search-area">
-						<button class="menu-option"><i class="fas fa-bars"></i></button>
-						<div class="mobiile-menu-area">
-							<nav class="mobile-menu">
-							<?php
-							wp_nav_menu( array(
-								'theme_location' => 'primary_menu'
-							) );
-							?>
-						</nav><!-- mobile-menu -->
-						<div class="menu-hide"></div>
-						</div><!-- mobiile-menu-area -->
-						<button class="search-option"><i class="fas fa-search"></i></button>
-						<div class="search-content">
+					</div><!-- Logo area -->
+				</div><!-- col-xl-3 -->
+				<div class="col-6 col-sm-6 col-md-6 col-lg-7 col-xl-6">
+									<div class="mobile-header">
+						<button class="search-mobile"><i class="fas fa-search"></i></button>
+						<div class="mobile-search-content">
 							<form action="<?php echo home_url('/'); ?>" method="get">
 								<input class="input-search-text" type="search" placeholder="Search keyword..." name="s">
 								<input type="submit" name="" value="Search">
 							</form>
-							<div class="search-hide"></div>
 						</div>
-						</div><!-- search-content -->
-					</div><!--search-area -->
-				</div><!-- .col-xl-8 -->
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</header><!-- .header-section -->
+						<button class="category-mobile"><i class="fas fa-list-ul"></i></button>
+						<div class="mobile-category-content">
+							<h2 class="top-catagories-title">All Categories</h2>
+							<nav class="mobile-cate-menu">
+								<?php 
+							wp_nav_menu( array(
+								'theme_location' => 'category_menu'
+							) );
+
+							?>
+							</nav>
+						</div>
+
+						<button class="menu-mobile"><i class="fas fa-bars"></i></button>
+						<nav class="mobile-main-menu">
+							<?php 
+							wp_nav_menu( array(
+								'theme_location' => 'main_menu'
+							) );
+
+							?>
+						</nav>
+					</div>
+					<div class="category-search-area">
+						<button id="" class="categories-btn" type="">All Categories <i class="fas fa-chevron-down"></i></button>
+						<form action="<?php echo home_url('/'); ?>" method="get">
+							<input class="search-text" type="search" placeholder="Search keyword..." name="s">
+							<input type="submit" name="" value="Search">
+						</form>
+					</div>
+
+					<div class="category-content">
+						<h2 class="top-catagories-title">All Categories</h2>
+						<div class="close-btn">+</div>
+						<nav class="header-catagories-menu">
+							<?php 
+							wp_nav_menu( array(
+								'theme_location' => 'category_menu'
+							) );
+
+							?>
+						</nav>
+					</div>
+				</div><!-- col-xl-8 -->
+				<div class="col-lg-2 col-xl-3">
+					<div class="main-menu-area">
+						<button class="main-menu-btn" type=""><i class="fas fa-bars"></i></button>
+						<nav class="main-menu-content">
+							<?php 
+							wp_nav_menu( array(
+								'theme_location' => 'main_menu'
+							) );
+
+							?>
+						</nav>
+					</div>
+				</div><!-- col-xl-1 -->
+			</div><!-- Row -->
+		</div><!-- Container -->
+
+	</header><!-- header-section -->

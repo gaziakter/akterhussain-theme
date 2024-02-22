@@ -4,32 +4,20 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Akter_Hussain
+ * @package Moni_Recipe
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			akter_hussain_posted_on();
-			akter_hussain_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php akter_hussain_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php akter_hussain_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+<article class="search-content-area">
+	<div class="search-img img-hover-zoom">
+		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post_img_size'); ?></a>
+	</div>
+	<div class="search-text">
+		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<span class="search-category"><i class="fas fa-clipboard-list"></i> <?php the_category( ' | ' ); ?></span>
+		<a class="search-paragraph" href="<?php the_permalink(); ?>"><?php
+		$content = get_the_content();
+		echo wp_trim_words( $content , '20' ); ?></a>
+	</div>
+</article>

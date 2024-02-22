@@ -4,14 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Akter_Hussain
+ * @package Moni_Recipe
  */
 
 ?>
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'akter-hussain' ); ?></h1>
+		<h1 class="result-notfound"><?php esc_html_e( 'Nothing Found', 'akterhussain' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -21,7 +21,7 @@
 			printf(
 				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'akter-hussain' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'akterhussain' ),
 					array(
 						'a' => array(
 							'href' => array(),
@@ -34,20 +34,16 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'akter-hussain' ); ?></p>
-			
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'akterhussain' ); ?></p>
 			<?php
-			// Template for not found any post
-			get_template_part( 'template-parts/content', 'search_form' );
+
 
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'akter-hussain' ); ?></p>
-
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'akterhussain' ); ?></p>
 			<?php
-			// Template for not found any post
-			get_template_part( 'template-parts/content', 'search_form' );
+		
 
 		endif;
 		?>

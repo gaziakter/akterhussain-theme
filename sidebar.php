@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Akter_Hussain
+ * @package Moni_Recipe
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

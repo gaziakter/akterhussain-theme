@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Akter_Hussain
+ * @package Moni_Recipe
  */
 
 /*
@@ -28,19 +28,19 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$akter_hussain_comment_count = get_comments_number();
-			if ( '1' === $akter_hussain_comment_count ) {
+			$moni_recipe_comment_count = get_comments_number();
+			if ( '1' === $moni_recipe_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'akter-hussain' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'akterhussain' ),
+					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
-				printf( 
+				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $akter_hussain_comment_count, 'comments title', 'akter-hussain' ) ),
-					number_format_i18n( $akter_hussain_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $moni_recipe_comment_count, 'comments title', 'akterhussain' ) ),
+					number_format_i18n( $moni_recipe_comment_count ),
+					'<span>' . get_the_title() . '</span>'
 				);
 			}
 			?>
@@ -50,12 +50,10 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
+			wp_list_comments( array(
+				'style'      => 'ol',
+				'short_ping' => true,
+			) );
 			?>
 		</ol><!-- .comment-list -->
 
@@ -65,7 +63,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'akter-hussain' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'akterhussain' ); ?></p>
 			<?php
 		endif;
 

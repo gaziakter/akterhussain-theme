@@ -4,21 +4,49 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Akter_Hussain
+ * @package Moni_Recipe
  */
 
 ?>
 
-<div class="col-xl-12">
-	<article class="single-post">
-		<header class="single-header">
-			<h1 class="single-title"><?php the_title(); ?></h1>
-		</header><!-- .single-header -->
-		<div class="single-content">
-			<?php the_content(); ?>
-		</div><!-- single-content -->
-		<footer class="single-footer">
-			
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+	    	<?php the_title( '<h1 class="catagory-title">', '</h1>' ); ?>
+	</header><!-- .entry-header -->
+
+	<?php moni_recipe_post_thumbnail(); ?>
+
+	<div class="moni-page-content">
+		<?php
+		the_content();
+
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'akterhussain' ),
+			'after'  => '</div>',
+		) );
+		?>
+	</div><!-- .entry-content -->
+
+	<?php if ( get_edit_post_link() ) : ?>
+		<footer class="entry-footer">
+			<?php
+			edit_post_link(
+				sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'akterhussain' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					get_the_title()
+				),
+				'<span class="edit-link">',
+				'</span>'
+			);
+			?>
 		</footer><!-- .entry-footer -->
-	</article><!-- .single-post -->
-</div><!-- .col-xl-12 -->
+	<?php endif; ?>
+</article><!-- #post-<?php the_ID(); ?> -->

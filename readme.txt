@@ -1,4 +1,4 @@
-=== Akter Hussain ===
+=== Moni Recipe ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -9,11 +9,11 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Akter Hussain.
+A starter theme called Moni Recipe.
 
 == Description ==
 
-Akter Hussain is a personal theme for Akter Hussain. It\'s not for public use. It\'s only for private use.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 == Installation ==
 
@@ -25,7 +25,7 @@ Akter Hussain is a personal theme for Akter Hussain. It\'s not for public use. I
 
 = Does this theme support any plugins? =
 
-Akter Hussain includes support for Infinite Scroll in Jetpack.
+Moni Recipe includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
@@ -34,5 +34,5 @@ Akter Hussain includes support for Infinite Scroll in Jetpack.
 
 == Credits ==
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
